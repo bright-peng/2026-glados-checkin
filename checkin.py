@@ -8,7 +8,7 @@
 - 精准获取当前积分 (Points)
 - 积分达标自动兑换会员天数（默认 500 分兑换 100 天，可配置/关闭）
 - PushPlus 微信推送（包含积分、剩余天数、签到结果、兑换结果）
-- 智能多域名切换 (优先 glados.cloud)
+- 智能多域名切换 (优先 glados.space)
 - 支持 Cookie-Editor 导出格式
 """
 
@@ -29,9 +29,7 @@ if sys.platform.startswith('win'):
 
 # 域名优先级：Cloud 第一
 DOMAINS = [
-    "https://glados.cloud",
-    "https://glados.rocks", 
-    "https://glados.network",
+    "https://glados.space",
 ]
 
 HEADERS = {
@@ -215,7 +213,7 @@ class GLaDOS:
 
     def checkin(self):
         """执行签到"""
-        return self.req('POST', '/api/user/checkin', {'token': 'glados.cloud'})
+        return self.req('POST', '/api/user/checkin', {'token': 'glados.space'})
 
     def exchange(self, plan):
         """兑换会员天数：表单提交 planType (plan100/plan200/plan500)"""
